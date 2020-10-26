@@ -1,0 +1,54 @@
+{
+  "tests": [  
+    {
+      "name": "Test Connecting",
+      "setup": "",
+      "run": "cd leader-election-1;mvn -q -DskipTests=false -Dtest=LeaderElectionTest#processConnected test",
+      "input": "",
+      "output": "",
+      "comparison": "",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "Test Disconnecting",
+      "setup": "",
+      "run": "cd leader-election-1;mvn -q -DskipTests=false -Dtest=LeaderElectionTest#processDisConnected test",
+      "input": "",
+      "output": "",
+      "comparison": "",
+      "timeout": 2,
+      "points": 1
+    },
+    {
+      "name": "Test VolunteerForLeadership",
+      "setup": "",
+      "run": "cd leader-election-1;mvn -q -DskipTests=false -Dtest=LeaderElectionTest#volunteerForLeadership test",
+      "input": "",
+      "output": "",
+      "comparison": "",
+      "timeout": 2,
+      "points": 2
+    },
+    {
+      "name": "Test Electing Leader with One Node",
+      "setup": "",
+      "run": "cd leader-election-1;mvn -q -DskipTests=false -Dtest=LeaderElectionTest#electLeaderOneNode test",
+      "input": "",
+      "output": "",
+      "comparison": "",
+      "timeout": 2,
+      "points": 3
+    },
+    {
+      "name": "Test Electing Leader with Two Nodes",
+      "setup": "",
+      "run": "cd leader-election-1;mvn -q -DskipTests=false -Dtest=LeaderElectionTest#electLeaderTwoNodes test",
+      "input": "",
+      "output": "",
+      "comparison": "",
+      "timeout": 2,
+      "points": 3
+    }
+  ]
+}
