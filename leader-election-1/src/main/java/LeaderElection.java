@@ -41,11 +41,11 @@ public class LeaderElection implements Watcher {
     //this methoid will return a string wichi is full path to znode that's created.
     public void volunteerForLeadership() throws KeeperException, InterruptedException {
         //to give a name to child znode
-        String znodePrefix=ELECTION_NAMESPACE+"/c_";
+        String znodePrefix=ELECTION_NAMESPACE + "/c_";
         String znodeFullPath = zooKeeper.create(znodePrefix, new byte[]{}, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
         //this is ephemeral znode, when application ends, it will be removed
-        this.currentZnodeName = znodeFullPath.replace(ELECTION_NAMESPACE + "/","");
-        System.out.println("znode name:"+currentZnodeName);
+        this.currentZnodeName = znodeFullPath.replace(ELECTION_NAMESPACE + "/", "");
+        System.out.println("znode name: "+currentZnodeName);
     }
 
     //to check what the current children of the election znode,
