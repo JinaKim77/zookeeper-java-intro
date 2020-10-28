@@ -66,11 +66,9 @@ public class LeaderElection implements Watcher {
         if(smallestChild.equals(currentZnodeName)){
             System.out.println("I am the leader");
             leader=true;
-            return;
         }else{
             System.out.println("I am not the leader, "+ smallestChild +" is the leader.");
             leader=false;
-
         }
     }
 
@@ -80,7 +78,6 @@ public class LeaderElection implements Watcher {
             zooKeeper.wait();
         }
     }
-
 
     public void close(){
     }
@@ -99,7 +96,6 @@ public class LeaderElection implements Watcher {
                     }
                 }
         }
-
     }
 
     //******************************
