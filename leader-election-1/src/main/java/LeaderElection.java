@@ -27,6 +27,7 @@ public class LeaderElection implements Watcher {
         leaderElection.electLeader();
         leaderElection.run();
         System.out.println("Disconnected from zookeeper, exiting application");
+        leaderElection.close();
     }
 
     //method that will create the connection to zookeeper
@@ -79,7 +80,8 @@ public class LeaderElection implements Watcher {
         }
     }
 
-    public void close(){
+    public void close() throws InterruptedException {
+        zooKeeper.close();
     }
 
     //Watcher interface has process method, so you need to override this method
