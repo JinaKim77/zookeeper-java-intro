@@ -70,7 +70,7 @@ public class LeaderElection implements Watcher {
         }else{
             System.out.println("I am not the leader, "+ smallestChild +" is the leader.");
             leader=false;
-            
+
         }
     }
 
@@ -91,10 +91,10 @@ public class LeaderElection implements Watcher {
         switch (watchedEvent.getType()){
             case None:
                 if(watchedEvent.getState()==Event.KeeperState.SyncConnected) {
-                    System.out.println("Successfully connected to zookeeper");
+                    System.out.println("Successfully connected to Zookeeper");
                 }else{
                     synchronized (zooKeeper) {
-                        System.out.println("Disconnected from zookeeper event");
+                        System.out.println("disconnected from Zookeeper event");
                         zooKeeper.notifyAll();
                     }
                 }
