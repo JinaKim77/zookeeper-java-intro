@@ -70,6 +70,7 @@ public class LeaderElection implements Watcher {
         }else{
             System.out.println("I am not the leader, "+ smallestChild +" is the leader.");
             leader=false;
+            
         }
     }
 
